@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Dashboard from "./components/Dashboard";
+import Form from "./components/Form";
+import Sidebar from "./components/Sidebar";
+
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
+import { useState } from "react";
+import GoogleMap from "./components/GoogleMap";
 
 function App() {
+  const [data, setData] = useState({});
+
+  const getData = (inputData) => {
+    setData(inputData);
+  };
+
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<Form getData={getData} />}></Route>
+
+          <Route
+            exact
+            path="/dashboard"
+            element={<Dashboard data={data} />}
+          ></Route>
+          <Route exact path="/map" element={<GoogleMap />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

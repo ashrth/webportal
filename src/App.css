@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  /* display:flex;
+    justify-content: center;
+    align-items: center; */
+  overflow-x: hidden;
   min-height: 100vh;
+  background-color: rgb(29, 27, 27);
+}
+
+/* Form Styling */
+
+#form {
+  margin: .5rem;
+  height: auto;
+  box-sizing: border-box;
+  width: 400px;
+  padding: 20px;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+
+.inputs {
+  margin: 15px 0;
+  position: relative;
+}
+
+.inputs label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.inputs input {
+  display: block;
+  width: 90%;
+  padding: 10px;
+}
+
+.btn {
+  width: 95%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: rgb(29, 27, 27);
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+}
+
+/* Header Styling */
+
+a {
+  text-decoration: none;
+}
+.navbar {
+  background-color: black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  height: 4rem;
+  width: 100%;
+}
+.navbar .ul-list li {
+  display: inline-block;
+}
+.navbar li {
+  padding: 1.5rem;
+  list-style: none;
+}
+.navbar a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a:hover {
+  color: rgb(168, 46, 46);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Dashboard styling */
+
+main {
+  width: 80%;
+
+  margin: 2rem;
+  margin-left: 13rem;
+  position: relative;
+  bottom: 47rem;
+  display: grid;
+  color: #fff;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.div1 {
+  height: 15rem;
+  width: 17rem;
+  background-color: #554f4f;
+  padding: 0.5rem;
+}
+
+.div2 {
+  padding: 0.5rem;
+  background-color: #554f4f;
+  grid-row: 1/3;
+  grid-column: 2/3;
+}
+
+.googleMaps {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 5rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 10rem;
+  top: 2rem;
+}
+
+.name {
+  position: relative;
+  bottom: 49rem;
+
+  left: 75rem;
+  color: white;
+}
+/* Sidebar Styling */
+
+.sidebar {
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  width: 200px;
+  transition: all 0.5s;
+}
+.top_section {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.bars {
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+.link {
+  display: flex;
+  color: #fff;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+.link:hover {
+  background: lightskyblue;
+  color: #000;
+  transition: all 0.5s;
+}
+.active {
+  background: lightskyblue;
+  color: #000;
+}
+.icon,
+.link_text {
+  font-size: 20px;
+}
+
+@media (max-width: 375px) {
+  .navbar li a {
+    font-size: 0.6rem;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar li {
+    padding: 0.9rem;
+  }
+  main {
+    width: 80%;
+    position: relative;
+    left: 2rem;
+
+    margin: 1rem;
+    padding: 1rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(1, 100px);
+  }
+  .div1 {
+    position: relative;
+    top: 2rem;
+    height: 4rem;
+    width: 5rem;
+  }
+  .div2 {
+    position: relative;
+    top: 2rem;
+  }
+
+  h3 {
+    font-size: 13px;
+    position: relative;
+    top: 10px;
+    left: 1rem;
+  }
+  h2 {
+    font-size: 7px;
+  }
+  .name {
+    position: absolute;
+    top: 1rem;
+    left: 18rem;
+    color: white;
+  }
+  h4 {
+    font-size: 0.6rem;
+  }
+
+  .googleMaps {
+    position: relative;
+    width: 9rem;
+    height: 9rem;
   }
 }
